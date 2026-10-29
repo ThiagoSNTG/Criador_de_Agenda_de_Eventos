@@ -1,0 +1,48 @@
+PACOTE - GERADOR DE AGENDA DE EVENTOS MULTIUNIDADE
+
+ESTRUTURA (todos os arquivos no MESMO diretório do GitHub Pages):
+
+index.html
+saquarema.html
+marica.html
+capa-saquarema.jpg
+capa-marica-facmar.jpg
+logo-horizontal-branca.png
+logo-horizontal-colorida.png
+logo-vertical-branca.png
+logo-vertical-colorida.png
+
+LINKS INTERNOS:
+- index.html -> saquarema.html
+- index.html -> marica.html
+- saquarema.html -> index.html ("Escolher unidade")
+- marica.html -> index.html ("Escolher unidade")
+
+IMAGENS USADAS:
+- Saquarema: capa-saquarema.jpg
+- Maricá/FACMAR: capa-marica-facmar.jpg
+- Cabeçalho dos geradores (fundo claro): logo-horizontal-colorida.png
+- Rodapé das páginas/PDF (fundo vinho): logo-horizontal-branca.png
+- Página de seleção (fundo escuro): logo-horizontal-branca.png
+
+LOGOS VERTICAIS:
+As versões vertical branca e colorida foram incluídas no pacote, embora a interface atual use
+as versões horizontais por se encaixarem melhor no cabeçalho e no rodapé.
+
+PALETA APLICADA:
+- Preto: #070707
+- Vinho principal: #8A1822
+- Vinho escuro: #4D0B10
+- Coral/Rosa: #FF7F86
+- Branco: #FFFFFF
+- Cinza quente: #B0A8A9
+
+OBSERVAÇÕES:
+- Os dados salvos no navegador são separados por unidade.
+- Saquarema usa a chave local: agenda_univassouras_saquarema
+- Maricá/FACMAR usa a chave local: agenda_univassouras_marica_facmar
+- O JSON mantém a mesma estrutura do gerador anterior.
+- A exportação gera:
+  agenda_eventos_saquarema.json
+  agenda_eventos_marica_facmar.json
+- O PDF permanece em proporção 9:16 retrato (135 mm x 240 mm).

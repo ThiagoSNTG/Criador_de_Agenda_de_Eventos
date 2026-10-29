@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gerador de Agenda de Eventos - Escolha a unidade</title>
+<style>
+:root{
+  --black:#070707;
+  --burgundy:#8a1822;
+  --burgundy-dark:#4d0b10;
+  --coral:#ff7f86;
+  --white:#ffffff;
+  --gray:#b0a8a9;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(138,24,34,.50), transparent 34%),
+    linear-gradient(145deg,#050505 0%,#151010 52%,#26090d 100%);
+}
+.topbar{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 24px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+  background:rgba(0,0,0,.28);
+}
+.topbar img{
+  width:min(430px,75vw);
+  height:auto;
+  display:block;
+}
+main{
+  width:min(1120px,92vw);
+  margin:0 auto;
+  padding:62px 0 70px;
+}
+.eyebrow{
+  color:var(--coral);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  font-weight:900;
+  text-align:center;
+}
+h1{
+  margin:10px auto 12px;
+  text-align:center;
+  font-size:clamp(30px,4.5vw,54px);
+  line-height:1.02;
+  max-width:850px;
+}
+.lead{
+  margin:0 auto 38px;
+  max-width:720px;
+  text-align:center;
+  color:#d9d5d5;
+  line-height:1.55;
+}
+.choices{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+.campus-card{
+  position:relative;
+  min-height:520px;
+  border-radius:26px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 18px 48px rgba(0,0,0,.30);
+  background:#111;
+  isolation:isolate;
+  transition:.2s ease;
+}
+.campus-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,127,134,.65);
+  box-shadow:0 24px 60px rgba(0,0,0,.42);
+}
+.campus-card::before{
+  content:"";
+  position:absolute;inset:0;
+  background-size:cover;
+  background-position:center top;
+  z-index:-2;
+}
+.campus-card.saq::before{background-image:url("capa-saquarema.jpg")}
+.campus-card.mar::before{background-image:url("capa-marica-facmar.jpg")}
+.campus-card::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.05) 18%,rgba(0,0,0,.50) 58%,rgba(0,0,0,.96) 100%);
+  z-index:-1;
+}
+.card-content{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:28px 30px 30px;
+}
+.card-kicker{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--burgundy);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+.card-content h2{
+  margin:13px 0 8px;
+  font-size:32px;
+}
+.card-content p{
+  margin:0 0 20px;
+  color:#e1dddd;
+  line-height:1.4;
+}
+.open{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 16px;
+  border-radius:10px;
+  background:var(--coral);
+  color:#4d0b10;
+  font-weight:900;
+}
+.note{
+  margin:28px auto 0;
+  text-align:center;
+  color:#aaa3a4;
+  font-size:12px;
+  line-height:1.55;
+}
+footer{
+  text-align:center;
+  padding:20px;
+  color:#9e9798;
+  font-size:11px;
+}
+@media(max-width:760px){
+  main{padding-top:38px}
+  .choices{grid-template-columns:1fr}
+  .campus-card{min-height:460px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <img src="logo-horizontal-branca.png" alt="Univassouras">
+</header>
+
+<main>
+  <div class="eyebrow">Agenda de Eventos</div>
+  <h1>Qual unidade você deseja acessar?</h1>
+  <p class="lead">
+    Cada unidade possui sua própria agenda, capa e armazenamento local.
+    O formato de importação/exportação JSON e a geração em PDF 9:16 permanecem iguais.
+  </p>
+
+  <nav class="choices" aria-label="Escolha a unidade">
+    <a class="campus-card saq" href="saquarema.html">
+      <div class="card-content">
+        <span class="card-kicker">Unidade</span>
+        <h2>Saquarema</h2>
+        <p>Campus Universitário de Saquarema</p>
+        <span class="open">Abrir gerador →</span>
+      </div>
+    </a>
+
+    <a class="campus-card mar" href="marica.html">
+      <div class="card-content">
+        <span class="card-kicker">Unidade</span>
+        <h2>Maricá / FACMAR</h2>
+        <p>Campus Universitário de Maricá e Faculdade de Ciências Médicas de Maricá</p>
+        <span class="open">Abrir gerador →</span>
+      </div>
+    </a>
+  </nav>
+
+  <p class="note">
+    Todos os arquivos deste pacote devem permanecer no mesmo diretório do GitHub Pages.
+  </p>
+</main>
+
+<footer>Gerador de Agenda de Eventos</footer>
+</body>
+</html>
